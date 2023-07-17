@@ -6,18 +6,25 @@ Console.Write("Введите число A: ");
 int a = int.Parse(Console.ReadLine());
 Console.Write("Введите число B: ");
 int b = int.Parse(Console.ReadLine());
-int c = 1;
-if (b < 1)
-    Console.Write("Число B должно быть натуральным\n");
-else
+
+void Pow(int a, int b)
 {
-    while (b != 0)
+    int c = 1;
+    if (b < 1)
+        Console.Write("Число B должно быть натуральным\n");
+    else
     {
-        c = c * a;
-        b = b - 1;
+        while (b != 0)
+        {
+            c = c * a;
+            b = b - 1;
+        }
+        Console.Write("Число A в натуральной степени B равно " + c);
     }
-    Console.Write("Число A в натуральной степени B равно " + c);
 }
+
+Pow(a, b);
+
 
 
 
@@ -62,8 +69,15 @@ int Sum(int a, int len)
 
 int[] randomArray = new int[8];
 
-for (int i = 0; i < 8; i++)
+
+void PrintArray(int[] arr)
 {
-    randomArray[i] = new Random().Next(1, 99);
-    Console.Write(randomArray[i] + " ");
+
+    for (int i = 0; i < 8; i++)
+    {
+        arr[i] = new Random().Next(1, 99);
+        Console.Write(arr[i] + " ");
+    }
 }
+
+PrintArray(randomArray);
